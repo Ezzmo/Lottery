@@ -1,0 +1,12 @@
+<html>
+    <h1>Generate your prize!</h1>
+    <div class='form'>
+        <form method='GET' action=''>
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.roll }}
+            </div>
+        </form>
+    <h3>Code: {{ roll }}</h3>
+    </div>
+</html>
