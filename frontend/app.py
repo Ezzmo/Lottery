@@ -15,7 +15,7 @@ class rollbutton(FlaskForm):
 @app.route('/home', methods=['GET','POST'])
 def home():
     form = rollbutton()
-    roll = str(requests.get('http://backend:5003/roll').text)
+    roll = str(requests.get('http://backend:5001/roll').text)
     return render_template('index.html',form=form, roll=roll)
 
 

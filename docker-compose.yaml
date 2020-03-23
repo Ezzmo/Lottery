@@ -1,24 +1,56 @@
-version: '3.7'
+version: '3.5'
 services:
-  pokedex:
-    build: ./pokedex
+  backend:
+    build: ./backend
     ports:
-    - target: 8080
-      published: 8080
+    - target: 5001
+      published: 5001
       protocol: tcp
     environment:
     - SECRET_KEY=secretkey
     networks:
     - my-network
-  
+  letters:
+    build: ./letters
+    ports:
+    - target: 5002
+      published: 5002
+      protocol: tcp
+    environment:
+    - SECRET_KEY=secretkey
+    networks:
+    - my-network
+  numbers:
+    build: ./numbers
+    ports:
+    - target: 5003
+      published: 5003
+      protocol: tcp
+    environment:
+    - SECRET_KEY=secretkey
+    networks:
+    - my-network
+  frontend:
+    build: ./frontend
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp
+    environment:
+    - SECRET_KEY=secretkey
+    networks:
+    - my-network
   nginx:
     build: ./nginx
     ports:
     - target: 80
       published: 80
       protocol: tcp
+    environment:
+    - SECRET_KEY=secretkey
     networks:
     - my-network
 
+    
 networks:
   my-network:
