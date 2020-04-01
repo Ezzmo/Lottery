@@ -1,12 +1,38 @@
+<!DOCTYPE html>  
 <html>
-    <h1>Generate your prize!</h1>
-    <div class='form'>
-        <form method='GET' action=''>
-            {{ form.hidden_tag() }}
-            <div>
-                {{ form.roll }}
-            </div>
-        </form>
-    <h3>Code: {{ roll }}</h3>
-    </div>
+  <head>
+    <title>Title of the document</title>
+    <style>  
+      #boxes{
+      content: "";
+      display: table;
+      clear: both;
+      }
+      div{
+      float:left;
+      height:470px; 
+      width:40%;
+      padding:0 10px;
+      }
+      #column2{  
+      width:55%; 
+      } 
+      h2{ 
+      color: #000000; 
+      text-align:center; 
+      } 
+    </style>
+  </head>
+  <body>
+    <main id="boxes">
+      <h2>DA LOTTARY</h2>
+      <div id="column1">
+        <h2>Register</h2>
+
+      </div>
+      <div id="column2">
+        <h2>Previous Winners</h2>
+      </div>
+    </main>
+  </body>
 </html>
