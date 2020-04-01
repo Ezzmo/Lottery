@@ -50,6 +50,14 @@ services:
     - SECRET_KEY=secretkey
     networks:
     - my-network
+  db:
+    build: ./db
+    ports:
+    - target: 3306
+      published: 3306
+      protocol: tcp
+    networks:
+    - my-network
 
     
 networks:
