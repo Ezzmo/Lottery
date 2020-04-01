@@ -27,11 +27,42 @@
     <main id="boxes">
       <h2>DA LOTTARY</h2>
       <div id="column1">
-        <h2>Register</h2>
-
-      </div>
-      <div id="column2">
-        <h2>Previous Winners</h2>
+        <h2>Enter</h2>
+        <form method="POST" action="">
+          <div class="form-group">
+              {{ form.hidden_tag() }}
+          <div>
+            <div class="form-group">
+              {{ form.firstname.label }}
+              {{ form.firstname }}
+              <div class="error">
+                  {% for error in form.firstname.errors %}
+                      <p>{{ error }}</p>
+                  {% endfor %}
+              </div>
+          <div>
+            <div class="form-group">
+              {{ form.lastname.label }}
+              {{ form.lastname }}
+              <div class="error">
+                  {% for error in form.lastname.errors %}
+                      <p>{{ error }}</p>
+                  {% endfor %}
+              </div>
+          <div>
+          <div class="form-group">
+              {{ form.email.label }}
+              {{ form.email }}
+              <div class="error">
+                  {% for error in form.email.errors %}
+                      <p>{{ error }}</p>
+                  {% endfor %}
+              </div>
+          <div>
+          <div class="form-group">
+              {{ form.submit }}
+          <div>
+      </form> 
       </div>
     </main>
   </body>
