@@ -1,14 +1,8 @@
-GRANT ALL ON db.* TO 'madmin';
-
-CREATE DATABASE IF NOT EXISTS db;
-CREATE TABLE IF NOT EXISTS db.entries(
+CREATE DATABASE IF NOT EXISTS lottery;
+GRANT ALL ON lottery.* TO 'madmin';
+CREATE TABLE IF NOT EXISTS lottery.entries(
     entry_id INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
-    code CHAR(6) NOT NULL,
-    win BOOLEAN NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS db.prizes(
-    prize INTEGER NOT NULL PRIMARY KEY
+    code CHAR(6) NOT NULL
 );

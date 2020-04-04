@@ -50,12 +50,10 @@ services:
     - SECRET_KEY=secretkey
     networks:
     - my-network
-  db:
+  databass:
     build: ./db
     ports:
-    - target: 3307
-      published: 3307
-      protocol: tcp
+    - 3306
     environment:
       MYSQL_ROOT_PASSWORD: XD12370
       MYSQL_USER: madmin
