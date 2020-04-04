@@ -53,11 +53,16 @@ services:
   db:
     build: ./db
     ports:
-    - target: 3306
-      published: 3306
+    - target: 3307
+      published: 3307
       protocol: tcp
+    environment:
+      MYSQL_ROOT_PASSWORD: XD12370
+      MYSQL_USER: madmin
+      MYSQL_PASSWORD: adminpass
     networks:
     - my-network
+    container_name: databass
 
     
 networks:

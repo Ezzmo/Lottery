@@ -7,7 +7,7 @@ app.config['SECRET_KEY'] = getenv('SECRET_KEY')
 
 @app.route('/get',methods=['POST','GET'])
 def get():
-    roll = "".join([random.randint(0,9) for i in range(3)])
+    roll = "".join([str(random.randint(0,9)) for i in range(3)])
     return roll
     
 if __name__ == '__main__':
