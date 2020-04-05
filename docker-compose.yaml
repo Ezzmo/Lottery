@@ -1,33 +1,33 @@
 version: '3.5'
 services:
   backend:
-    build: ./backend
+    image: docktermo/backend
     ports:
     - target: 5001
       published: 5001
       protocol: tcp
     environment:
-    - SECRET_KEY=secretkey
+    - SECRET_KEY=${SECRET_KEY}
     networks:
     - my-network
   letters:
-    build: ./letters
+    image: docktermo/letters:${VERSION}
     ports:
     - target: 5002
       published: 5002
       protocol: tcp
     environment:
-    - SECRET_KEY=secretkey
+    - SECRET_KEY=${SECRET_KEY}
     networks:
     - my-network
   numbers:
-    build: ./numbers
+    image: docktermo/numbers:${VERSION}
     ports:
     - target: 5003
       published: 5003
       protocol: tcp
     environment:
-    - SECRET_KEY=secretkey
+    - SECRET_KEY=${SECRET_KEY}
     networks:
     - my-network
   frontend:
@@ -37,17 +37,15 @@ services:
       published: 5000
       protocol: tcp
     environment:
-    - SECRET_KEY=secretkey
+    - SECRET_KEY=${SECRET_KEY}
     networks:
     - my-network
   databass:
-    build: ./db
+    image: docktermo/databass
     ports:
     - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: XD12370
-      MYSQL_USER: madmin
-      MYSQL_PASSWORD: adminpass
+      MYSQL_ROOT_PASSWORD: ${ROOTPASS}
     networks:
     - my-network
     container_name: databass

@@ -6,8 +6,8 @@ import requests
 from os import getenv
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'SECRET_KEY'
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://madmin:adminpass@databass:3306/lottery"
+app.config['SECRET_KEY'] = getenv('SECRET_KEY')
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:"+getenv('DB_ROOT_PASS')+"@databass:3306/lottery"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
