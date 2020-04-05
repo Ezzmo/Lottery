@@ -8,7 +8,7 @@ pipeline {
             sudo apt-get update -y
             sudo apt-get install python3 python3-pip python3-venv -y
             python3 -m venv venv
-            source venv/bin/activate
+            . venv/bin/activate
             pwd
             ls
             cd numbers1
@@ -22,6 +22,7 @@ pipeline {
       stage('Deploy'){
         steps{
           sh '''
+                sudo apt-get install sshpass
                 echo ${MANAGER_IP}
                 echo ${DB_ROOT_PASS}
                 echo ${SECRET_KEY}
