@@ -25,13 +25,10 @@ def home():
 @app.route('/entry',methods = ['POST', 'GET'])
 def entry():
     if request.method == 'POST':
-        entry = request.form
+        entry = request.form.to_dict()
         code = str(requests.get('http://backend:5001/roll').text)
-        entryval={}
-        for key, value in entry.items():
-            entryval.update({key : value})
-        entryval.update({'Code' : code})    
-        dbentry = entries(first_name=entryval['First Name'], last_name=entryval['Last Name'], code= code)
+        entry.update({'Code' : code})    
+        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], code= code)
         db.session.add(dbentry)
         db.session.commit()
         return render_template("entry.html",entry = entry, code=code)

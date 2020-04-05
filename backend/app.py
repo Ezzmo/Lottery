@@ -10,6 +10,7 @@ app.config['SECRET_KEY'] = getenv('SECRET_KEY')
 def roll():
     nums = requests.get("http://numbers:5003/get")
     letts = requests.get("http://letters:5002/get")
+    outcome = 
     return str(letts.text)+str(nums.text)
 
 if __name__ == '__main__':
