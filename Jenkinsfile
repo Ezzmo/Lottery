@@ -22,22 +22,16 @@ pipeline {
       stage('Deploy'){
         steps{
           sh '''
-                sudo apt-get install sshpass
-                echo ${MANAGER_IP}
-                echo ${DB_ROOT_PASS}
-                echo ${SECRET_KEY}
-                sshpass ssh -o "StrictHostKeyChecking=no" mo@${MANAGER_IP}
-                sleep 5 <<EOF
+                ssh -o "StrictHostKeyChecking=no" mo@${MANAGER_IP} <<EOF
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
-                pwd
-                repo="./lottery"
-                if [ -d $repo ]
+                dir="./lottery"
+                if [ -d $dir ]
                 then
-                    rm -rf $repo
+                    rm -rf $dir
                 fi
                 git clone https://github.com/Ezzmo/Lottery
                 cd ./lottery
-                sudo docker stack deploy --compose-file docker-compose.yaml stack
+                sudo docker stack deploy --compose-file docker-compose.yaml lottery
 EOF
              '''   
             }
