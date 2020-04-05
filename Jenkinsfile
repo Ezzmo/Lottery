@@ -17,16 +17,24 @@ pipeline {
             '''
         }
       }
-      stage('Deploy'){
+      stage('ssh into manager'){
         steps{
           sh '''
                 ssh mo@${MANAGER_IP} <<EOF
+                pwd
+                ls -la
+            '''
+            }
+       }
+       
+      stage('Deploy'){
+        steps{
+          sh '''
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
                 rm -rf Lottery
                 git clone https://github.com/Ezzmo/Lottery
                 cd ./Lottery
                 docker stack deploy --compose-file docker-compose.yaml Lottery
-EOF
              '''   
             }
         }
