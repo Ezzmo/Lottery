@@ -35,7 +35,7 @@ pipeline {
                     rm -rf $repo
                 fi
                 git clone https://github.com/Ezzmo/Lottery
-                cd ~/lottery
+                cd ./lottery
                 sudo docker stack deploy --compose-file docker-compose.yaml stack
 EOF
              '''   
