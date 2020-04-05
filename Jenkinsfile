@@ -9,8 +9,6 @@ pipeline {
             sudo apt-get install python3 python3-pip python3-venv -y
             python3 -m venv venv
             . venv/bin/activate
-            pwd
-            ls
             cd numbers1
             pip3 install -r requirements.txt
             pytest
