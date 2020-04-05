@@ -11,8 +11,10 @@ pipeline {
             source venv/bin/activate
             pwd
             ls
-            cd backend/
+            cd numbers1
             pip3 install -r requirements.txt
+            pytest
+            cd ../letters1
             pytest
             '''
         }
