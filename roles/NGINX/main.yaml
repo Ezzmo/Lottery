@@ -1,0 +1,24 @@
+- name: 'Install NGINX'
+  apt:
+    pkg:
+    - nginx 
+    - git 
+    state: latest
+    update_cache: true
+
+- name: 'Initiate the NGINX service'
+  service:
+    name: nginx
+    state: started 
+
+- name: 'Install nginx.conf'
+  template:
+    src: nginx.conf
+    dest: /etc/nginx/nginx.conf
+  register: nginx_config
+  
+- name: 'Restart nginx'
+  service:
+    name: nginx
+    state: reloaded
+  when: nginx_config.changed

@@ -26,15 +26,16 @@ pipeline {
             '''
             }
        }
-       
+
       stage('Deploy'){
         steps{
           sh '''
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
-                rm -rf Lottery
-                git clone https://github.com/Ezzmo/Lottery
-                cd ./Lottery
-                docker stack deploy --compose-file docker-compose.yaml Lottery
+                export VERSION=${VERSION}
+                rm -rf lottery
+                git clone https://github.com/Ezzmo/lottery
+                cd ./lottery
+                docker stack deploy --compose-file docker-compose.yaml lottery
              '''   
             }
         }
