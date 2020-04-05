@@ -45,7 +45,7 @@ services:
     ports:
     - 3306
     environment:
-      MYSQL_ROOT_PASSWORD: ${ROOTPASS}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASS}
     networks:
     - my-network
     container_name: databass

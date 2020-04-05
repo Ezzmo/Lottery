@@ -25,10 +25,8 @@ pipeline {
                 echo ${MANAGER_IP}
                 echo ${DB_ROOT_PASS}
                 echo ${SECRET_KEY}
-                rootpass=${DB_ROOT_PASS}
                 sshpass ssh -o "StrictHostKeyChecking=no" mo@${MANAGER_IP} <<EOF
-                echo ${rootpass}
-                export rootpass=${rootpass}
+                export DB_ROOT_PASS=${DB_ROOT_PASS}
                 pwd
                 repo="./lottery"
                 if [ -d $repo ]
