@@ -20,13 +20,9 @@ pipeline {
       stage('Deploy'){
         steps{
           sh '''
-                ssh -o "StrictHostKeyChecking=no" mo@${MANAGER_IP} <<EOF
+                ssh mo@${MANAGER_IP} <<EOF
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
-                dir="./lottery"
-                if [ -d $dir ]
-                then
-                    rm -rf $dir
-                fi
+                rm -rf lottery
                 git clone https://github.com/Ezzmo/Lottery
                 cd ./lottery
                 sudo docker stack deploy --compose-file docker-compose.yaml lottery
