@@ -15,7 +15,8 @@ class entries(db.Model):
     user_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
-    code = db.Column(db.String(6), nullable=False)
+    code = db.Column(db.String(8), nullable=False)
+    winnings = db.Column(db.String(6), nullable=False)
 
 @app.route('/')
 @app.route('/home')
@@ -24,11 +25,20 @@ def home():
 
 @app.route('/entry',methods = ['POST', 'GET'])
 def entry():
+    vowels="aeiou"
     if request.method == 'POST':
         entry = request.form.to_dict()
         code = str(requests.get('http://backend:5001/roll').text)
-        entry.update({'Code' : code})    
-        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], code= code)
+        entry.update({'Code' : code})
+        if code[1] in vowels and code[2] in vowels and code[-1]==9:
+            entry.update({'Winnings' : "£1000"})
+        elif code[1] in vowels or code[2] in vowels and code[-1] ==9:
+            entry.update({'Winnings' : '£100'})
+        elif code[-1] == 9 or code[1] in vowels:
+            entry.update({'Winnings' : '£10'})
+        else:
+            entry.update({'Winnings' : '£0'})
+        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], code= code, winnings=entry['Winnings'])
         db.session.add(dbentry)
         db.session.commit()
         return render_template("entry.html",entry = entry, code=code)

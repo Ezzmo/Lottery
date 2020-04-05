@@ -40,16 +40,6 @@ services:
     - SECRET_KEY=secretkey
     networks:
     - my-network
-  nginx:
-    build: ./nginx
-    ports:
-    - target: 80
-      published: 80
-      protocol: tcp
-    environment:
-    - SECRET_KEY=secretkey
-    networks:
-    - my-network
   databass:
     build: ./db
     ports:
