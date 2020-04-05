@@ -22,10 +22,10 @@ pipeline {
           sh '''
                 ssh mo@${MANAGER_IP} <<EOF
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
-                rm -rf lottery
+                rm -rf Lottery
                 git clone https://github.com/Ezzmo/Lottery
-                cd ./lottery
-                sudo docker stack deploy --compose-file docker-compose.yaml lottery
+                cd ./Lottery
+                docker stack deploy --compose-file docker-compose.yaml Lottery
 EOF
              '''   
             }
