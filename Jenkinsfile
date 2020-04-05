@@ -38,7 +38,7 @@ pipeline {
                 sudo docker stack deploy --compose-file docker-compose.yaml stack
 EOF
              '''   
+            }
         }
-    } 
-    }    
-      }     
+    }
+}     
