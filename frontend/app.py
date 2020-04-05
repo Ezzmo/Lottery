@@ -32,13 +32,13 @@ def entry():
         entry.update({'Code' : code})
         if code[1] in vowels and code[2] in vowels and code[-1]==9:
             entry.update({'Winnings' : "£1000"})
-        elif code[1] in vowels or code[2] in vowels and code[-1] ==9:
+        elif (code[1] in vowels or code[2] in vowels) and code[-1] ==9:
             entry.update({'Winnings' : '£100'})
         elif code[-1] == 9 or code[1] in vowels:
             entry.update({'Winnings' : '£10'})
         else:
             entry.update({'Winnings' : '£0'})
-        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], code= code, winnings=entry['Winnings'])
+        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], email=entry['Email'], code= code, winnings=entry['Winnings'])
         db.session.add(dbentry)
         db.session.commit()
         return render_template("entry.html",entry = entry, code=code)
