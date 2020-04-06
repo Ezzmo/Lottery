@@ -13,7 +13,7 @@ services:
     networks:
     - my-network
   letters:
-    image: docktermo/letters:${VERSION}
+    image: docktermo/letters:1
     ports:
     - target: 5002
       published: 5002
@@ -25,7 +25,7 @@ services:
     networks:
     - my-network
   numbers:
-    image: docktermo/numbers:${VERSION}
+    image: docktermo/numbers:1
     ports:
     - target: 5003
       published: 5003
