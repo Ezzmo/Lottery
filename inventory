@@ -1,0 +1,32 @@
+[jenkins]
+51.11.51.218
+
+[jenkins:vars]
+ansible_user=mo
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[nginx]
+51.132.21.195
+
+[nginx:vars]
+ansible_user=mo
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[swarm-master]
+51.11.51.189
+
+[swarm-master:vars]
+ansible_user=mo
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+
+[swarm-worker]
+51.132.21.142
+
+[swarm-worker:vars]
+ansible_user=mo
+ansible_ssh_common_args='-o StrictHostKeyChecking=no'
+ansible_ssh_private_key_file=~/.ssh/id_rsa
+

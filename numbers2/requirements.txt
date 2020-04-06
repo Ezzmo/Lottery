@@ -10,7 +10,6 @@ WTForms==2.2.1
 Flask-Bcrypt==0.7.1
 flask-login==0.4.1
 Flask-Bootstrap==3.3.7.1
-Flask-Session
 gunicorn==20.0.4
 flask-testing==0.7.1
 pytest-cov==2.8.1  
