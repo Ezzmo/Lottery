@@ -17,19 +17,12 @@ pipeline {
             '''
         }
       }
-      stage('ssh into manager'){
-        steps{
-          sh '''
-                ssh -o StrictHostKeyChecking=no mo@${MANAGER_IP} <<EOF
-                pwd
-                ls -la
-            '''
-            }
-       }
-
       stage('Deploy'){
         steps{
           sh '''
+                ssh -i ~/.ssh/id_rsa mo@${MANAGER_IP} <<EOF
+                pwd
+                ls -la
                 export SECRET_KEY=${SECRET_KEY}
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
                 export VERSION=${VERSION}
