@@ -25,7 +25,7 @@ pipeline {
                 ls -la
                 export SECRET_KEY=${SECRET_KEY}
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
-                export VERSION=${VERSION}
+                export VERSION=1
                 rm -rf lottery
                 git clone https://github.com/Ezzmo/lottery
                 cd ./lottery
