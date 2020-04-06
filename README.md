@@ -48,7 +48,7 @@ Could:
 Automated testing was incomplete, with the frontend being untested. Howver, Postman was used for manual testing of the app routing and responses. Postman was used throughout development, and the number and letter services test scripts were designed beforehand.
 
 # Jenkins
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Jenkins.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Jenkins.PNG "Logo Title Text 1")
 
 A CI pipeline was implemented through Jenkins, by using a Jenkinsfile to configure the testing and deployment. The Pipeline contained two stages, testing and deploying.
 
