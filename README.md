@@ -18,9 +18,9 @@ pic
 # Project Tracking
 
 To track my project, I used a trello kanban board. The aim for each spring was to complete at least one card. By the project deadline, everything was in progress or completed, with the database, documentation and some tests were incomplete. 
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Trello%20initial.png "Logo Title Text 1")
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20midway.png "Logo Title Text 1")
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20deadline.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Trello%20initial.PNG "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20midway.PNG "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20deadline.PNG "Logo Title Text 1")
 
 # MoSCoW Priority
 
