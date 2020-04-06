@@ -1,0 +1,14 @@
+- hosts: swarm-master
+  become: true
+  tasks:
+  - name: "python pip"
+    apt:
+      name: python-pip
+      state: present
+      update_cache: true
+  - name: "docker sdk"
+    pip:
+      name: docker
+  - name: "initialise swarm"
+    docker_swarm:
+      state: present
