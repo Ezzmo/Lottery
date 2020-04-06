@@ -44,6 +44,7 @@ services:
       protocol: tcp
     environment:
     - SECRET_KEY=${SECRET_KEY}
+    - DB_ROOT_PASS=$(DB_ROOT_PASS)
     deploy:
       replicas: 1
     networks:
