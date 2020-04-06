@@ -7,7 +7,7 @@ from os import getenv
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = getenv('SECRET_KEY')
-app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:"+getenv('DB_ROOT_PASS')+"@databass:3306/lottery"
+app.config['SQLALCHEMY_DATABASE_URI'] = "mysql+pymysql://root:"+getenv('DB_ROOT_PASS')+"@lottery_databass:3306/lottery"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
@@ -39,9 +39,9 @@ def entry():
             entry.update({'Winnings' : '£10'})
         else:
             entry.update({'Winnings' : '£0'})
-        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], email=entry['Email'], code= code, winnings=entry['Winnings'])
-        db.session.add(dbentry)
-        db.session.commit()
+#        dbentry = entries(first_name=entry['First Name'], last_name=entry['Last Name'], email=entry['Email'], code= code, winnings=entry['Winnings'])
+#        db.session.add(dbentry)
+#        db.session.commit()
         return render_template("entry.html",entry = entry, code=code)
     else:
         return redirect(url_for('home'))
