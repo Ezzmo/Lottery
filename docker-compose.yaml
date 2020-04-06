@@ -37,7 +37,7 @@ services:
     networks:
     - my-network
   frontend:
-    build: ./frontend
+    image: docktermo/frontend
     ports:
     - target: 5000
       published: 5000
