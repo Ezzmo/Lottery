@@ -11,7 +11,7 @@ This project was to build a simple object generating app split up into container
 
 
 # Risk Assessment
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Risk%20assessment.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/Lottery/blob/master/documentation/Risk%20assessment.PNG "Logo Title Text 1")
 
 pic
 
