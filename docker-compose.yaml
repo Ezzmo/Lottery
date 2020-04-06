@@ -9,7 +9,7 @@ services:
     environment:
     - SECRET_KEY=${SECRET_KEY}
     deploy:
-      replicas: 4
+      replicas: 2
     networks:
     - my-network
   letters:
@@ -21,7 +21,7 @@ services:
     environment:
     - SECRET_KEY=${SECRET_KEY}
     deploy:
-      replicas: 4
+      replicas: 2
     networks:
     - my-network
   numbers:
@@ -33,7 +33,7 @@ services:
     environment:
     - SECRET_KEY=${SECRET_KEY}
     deploy:
-      replicas: 4
+      replicas: 2
     networks:
     - my-network
   frontend:
@@ -45,7 +45,7 @@ services:
     environment:
     - SECRET_KEY=${SECRET_KEY}
     deploy:
-      replicas: 4
+      replicas: 2
     networks:
     - my-network
   databass:
