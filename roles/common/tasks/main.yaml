@@ -1,0 +1,12 @@
+- name: jenkins user
+  user:
+    name: jenkins
+    shell: /bin/bash
+- name: prerequisites
+  apt:
+    pkg:
+    - curl
+    - git
+    - tree
+    state: latest
+    update_cache: true

@@ -3,6 +3,7 @@
   become: true
   roles: 
   - Docker
+  - common
   tags:
   - docker
 
@@ -11,6 +12,7 @@
   become: true
   roles:
   - Jenkins
+  - common
   tags:
   - jenkins
 
@@ -19,18 +21,19 @@
   become: true 
   roles: 
   - NGINX
+  - common
   tags:
   - nginx
 
-#- hosts: swarmmanager
-#  become: true
-#  tasks:
-#  - name: Initialize Docker Swarm
-#    shell: >
-#      docker swarm init
-#    run_once: true
-#  tags:
-#  - docker
+- hosts: swarmmanager
+  become: true
+  tasks:
+  - name: Initialize Docker Swarm
+    shell: >
+      docker swarm init
+    run_once: true
+  tags:
+  - docker
 
 - hosts: swarmmanager
   tasks:
