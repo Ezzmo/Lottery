@@ -10,5 +10,4 @@
     pip:
       name: docker
   - name: "initialise swarm"
-    docker_swarm:
-      state: present
+    shell: docker swarm init

@@ -1,8 +1,7 @@
-- import_playbook: key-pair.yaml
 - import_playbook: docker.yaml
 - import_playbook: jenkins-user.yaml
 - import_playbook: public-key.yaml
 - import_playbook: private-key.yaml
 - import_playbook: jenkins.yaml
-- import_playbook: swarm-master.yaml
+#- import_playbook: swarm-master.yaml
 - import_playbook: nginx.yaml
