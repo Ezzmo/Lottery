@@ -20,7 +20,7 @@ pipeline {
       stage('ssh into manager'){
         steps{
           sh '''
-                ssh mo@${MANAGER_IP} <<EOF
+                ssh -o StrictHostKeyChecking=no mo@${MANAGER_IP} <<EOF
                 pwd
                 ls -la
             '''
