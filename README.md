@@ -6,21 +6,21 @@ This project was to build a simple object generating app split up into container
 
 
 # Architechture
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/App%architechture.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/App%20architechture.png "Logo Title Text 1")
 
 
 
 # Risk Assessment
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Risk%assessment.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Risk%20assessment.png "Logo Title Text 1")
 
 pic
 
 # Project Tracking
 
 To track my project, I used a trello kanban board. The aim for each spring was to complete at least one card. By the project deadline, everything was in progress or completed, with the database, documentation and some tests were incomplete. 
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Trello%initial.png "Logo Title Text 1")
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%midway.png "Logo Title Text 1")
-![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%deadline.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Trello%20initial.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20midway.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%20deadline.png "Logo Title Text 1")
 
 # MoSCoW Priority
 
