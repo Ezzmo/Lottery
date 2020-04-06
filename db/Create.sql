@@ -6,5 +6,5 @@ CREATE TABLE IF NOT EXISTS lottery.entries(
     last_name VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     code CHAR(8) NOT NULL,
-    winnings VARCHAR(6) NOT NULL
+    winnings VARCHAR(6) NOT NULL,
 );
