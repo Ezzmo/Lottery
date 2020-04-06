@@ -9,7 +9,7 @@
     url: https://pkg.jenkins.io/debian/jenkins.io.key
     state: present
 
-    - name: Import Jenkins Repo
+- name: Import Jenkins Repo
   apt_repository:
     repo: deb http://pkg.jenkins.io/debian-stable binary/
     state: present

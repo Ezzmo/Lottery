@@ -1,34 +1,50 @@
 - hosts: swarm
+  name: install docker
   become: true
   roles: 
   - Docker
+  tags:
+  - docker
 
 - hosts: jenkins
+  name: install jenkins
   become: true
   roles:
   - Jenkins
+  tags:
+  - jenkins
 
-- hosts: NGINX
+- hosts: nginx
+  name: install nginx
   become: true 
   roles: 
   - NGINX
+  tags:
+  - nginx
 
-- hosts: swarmmanger
-  become: true
+#- hosts: swarmmanager
+#  become: true
+#  tasks:
+#  - name: Initialize Docker Swarm
+#    shell: >
+#      docker swarm init
+#    run_once: true
+#  tags:
+#  - docker
+
+- hosts: swarmmanager
   tasks:
-  - name: Initialize swarm
-    shell: docker swarm init
-    rune_once: true
-    tags: swarm
-  - name: Get join token
-    shell: docker swarm join-token --quiet worker
+  - name: Get join token  
+    shell: sudo docker swarm join-token --quiet worker
     register: worker_token
-    tags: swarm
+  tags:
+  - docker
 
 - hosts: swarmworker
   become: true
   tasks:
   - name: join the docker swarm
-    shell: "docker swarm join --token {{ hostvars['51.105.36.162']['worker_token']['stdout'] }} {{ hostvars['51.105.36.162']['ansible_default_ipv4']['address'] }}:2377"
-    tags: swarm
+    shell: "docker swarm join --token {{ hostvars['51.104.16.206']['worker_token']['stdout'] }} {{ hostvars['51.104.16.206']['ansible_default_ipv4']['address'] }}:2377"
+  tags:
+  - docker
 
