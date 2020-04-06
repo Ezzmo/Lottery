@@ -8,6 +8,8 @@ services:
       protocol: tcp
     environment:
     - SECRET_KEY=${SECRET_KEY}
+    deploy:
+      replicas: 4
     networks:
     - my-network
   letters:
@@ -18,6 +20,8 @@ services:
       protocol: tcp
     environment:
     - SECRET_KEY=${SECRET_KEY}
+    deploy:
+      replicas: 4
     networks:
     - my-network
   numbers:
@@ -28,6 +32,8 @@ services:
       protocol: tcp
     environment:
     - SECRET_KEY=${SECRET_KEY}
+    deploy:
+      replicas: 4
     networks:
     - my-network
   frontend:
@@ -38,6 +44,8 @@ services:
       protocol: tcp
     environment:
     - SECRET_KEY=${SECRET_KEY}
+    deploy:
+      replicas: 4
     networks:
     - my-network
   databass:
