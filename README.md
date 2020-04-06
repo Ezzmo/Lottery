@@ -6,19 +6,21 @@ This project was to build a simple object generating app split up into container
 
 
 # Architechture
-pic
-
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/App%architechture.png "Logo Title Text 1")
 
 
 
 # Risk Assessment
-
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Risk%assessment.png "Logo Title Text 1")
 
 pic
 
 # Project Tracking
 
 To track my project, I used a trello kanban board. The aim for each spring was to complete at least one card. By the project deadline, everything was in progress or completed, with the database, documentation and some tests were incomplete. 
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Trello%initial.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%midway.png "Logo Title Text 1")
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/trello%deadline.png "Logo Title Text 1")
 
 # MoSCoW Priority
 
@@ -46,6 +48,7 @@ Could:
 Automated testing was incomplete, with the frontend being untested. Howver, Postman was used for manual testing of the app routing and responses. Postman was used throughout development, and the number and letter services test scripts were designed beforehand.
 
 # Jenkins
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/Jenkins.png "Logo Title Text 1")
 
 A CI pipeline was implemented through Jenkins, by using a Jenkinsfile to configure the testing and deployment. The Pipeline contained two stages, testing and deploying.
 
@@ -72,7 +75,7 @@ Using ansible playbooks, the environments of the VMs were set up. This included:
 
 # CI Pipeline
 
-![CI Pipeline (2)](https://user-images.githubusercontent.com/9552989/78531293-14e12a80-77dd-11ea-96ff-8df58e0b271f.jpg)
+![alt text](https://github.com/Ezzmo/lottery/blob/master/documentation/pipeline.jpg "Logo Title Text 1")
 
 # Tests
 
