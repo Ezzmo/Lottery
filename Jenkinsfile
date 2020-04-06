@@ -30,6 +30,7 @@ pipeline {
       stage('Deploy'){
         steps{
           sh '''
+                export SECRET_KEY=${SECRET_KEY}
                 export DB_ROOT_PASS=${DB_ROOT_PASS}
                 export VERSION=${VERSION}
                 rm -rf lottery
